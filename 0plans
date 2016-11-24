@@ -1,0 +1,75 @@
+BlackJack Rules:
+Ace is worth 1 or 11
+Face cards are worth 10
+Before the deal each player places a bet
+Minimums are established before the game
+*We are doing 52 game, no card splitting*
+*Due to this we are dealing cards face down*
+Dealer gives all players 1 cards face up including himself and then another card facedown to himself and faceup for the rest
+Natural = BLACKJACK!!
+if Dealer has a natural he collects bets of all players without naturals
+if Dealer and some player have naturals the player keeps their bet
+If Player has natural and dealer does not he collects 1.5x their bet
+The Play
+Player on the left starts, asks for a hit (add another card) or to stand(stay with their cards)
+that players turn ends when they bust or stand
+treat the player to their left the same
+any player can choose an ace to be 1 or 11 whenever applicable, called a "soft hand"
+Dealer then flips his second card, if greater than 16 the dealer stands, if less the dealer hits
+if dealer has an ace and it will make the sum greater than 16 he must count it as 11
+If your starting hand is two of the same kind you can split it by placing double the bet, 1 on each card, and playing them as seperate cards
+if you split two aces you can only hit once and the payoff is x1 as opposed to 1.5 in any other situation
+if sum of 2 cards is 9-11 you can double down by doubling your bet and taking just one card face down and is turned at the ends
+Dealer may not split or double down 
+if dealers face up card is an ace players can have an insurance of up to half their original bet and if the face down card is a 10 they win twice their half bet
+*HOUSE RULES: WE RESHUFFLE WHEN 15 CARDS ARE LEFT IN THE DECK*
+
+
+1 if any player has a sum > 21 game ends
+
+
+
+to implement:
+deck{
+    shuffle
+    deal
+    maybe reset as well
+    reshuffle at 15 cards
+}
+dealer{
+full automatic plays
+}
+
+player{
+hitting
+sitting
+betting
+double down
+splitting
+insurance
+}
+
+game{
+    natural recognition
+    all win conditions
+    minimums
+    
+
+
+game runner
+    requires:
+        players[] //playerorder
+            player{
+                playerchips
+                ? playercards
+            }
+        deck{}
+        
+    -start of game-
+    starting bets   :playerorder:playerchips
+    deal()          :playerorder:shuffle:deal
+    naturals() {
+        dealer natural
+            round ends instantly, 
+    
+    
